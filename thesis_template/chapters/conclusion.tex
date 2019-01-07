@@ -1,0 +1,19 @@
+\chapter{Conclusion}\label{chap:conclusion}
+ In this thesis we addressed the main pitfall of Convnets. And how it can be solved by visualizing them.  Our contribution does not include proposing a new method to visualize the hidden layers in the network as there are already so many existing methods. It only shows which is the easy method to see each and every filter in the intermediate layers which is explained in Chapter 3. Most importantly we have shown that the parameters like number of epochs, batch-size does have an effect on pattern recognition part of the network. It is evident when we look the visualizations of two different models which are shown in chapter 4. In order to look for dead or redundant filters we need to visualize all the filters in the layers that is the reason why we have chosen to plot each individual filter as an image. 
+ Addition of Batch-Normalization and Dropout layer yielded more better and clearer visualizations of the filters.  
+ 
+ \section{Future Work}
+The main intention of this thesis is to provide a basic knowledge about pattern recognition nature of filters. Many different experiments are left for future due to lack of time. The following are the ideas that can be tested in future:
+\begin{itemize}
+    \item Extend this experiments on high resolution image datasets. Due to hardware and time constraints this work included only low resolution image datasets.
+    \item Try adding L1 and L2 regularization techniques and check if they provide more smooth filters.  
+    \item Build a new model with different stride values and analyze their effect.
+   
+\end{itemize}
+
+
+
+\noindent Here we were able to do only qualitative evaluation of these visualizations based on the previous research papers. This can be extended by introducing more robust and general methods for quantitative evaluation of these visualizations. 
+
+The experimental results of this work are not satisfactory and further study is definitely required in order to get deeper insights in to the parameters that contribute to the pattern recognition nature of these filters. The contribution of this thesis alone is not enough to build real world models. The work can also be extended by testing many different combinations of parameters like learning rates, activation functions, optimizers and find out the best one which yields good visualizations. I believe that if we use better and faster processing units like GPUs and TPUs there is much scope for further experimentation.
+

@@ -1,0 +1,27 @@
+\chapter{Discussion}\label{chap:discussion}
+
+According to the experience gained from the results we can see that there are few dead-filters in the model which is not trained long enough. In order to evaluate those visualizations I have built a dataset with three labeled classes which are redundant filters, dead-filters and normal filters. But since the dead-filters were only three to four it was not feasible to do image classification. So they are just represented in the form of visualizations. 
+\subsubsection{Training time and device used}
+
+The experiments were conducted on CPU with Windows OS and Anaconda environment. The python version used was 3.5.
+\begin{itemize}
+    \item To train the first model which just had Convolution, max-pooling and Relu layers with the help of Adam optimizer which had learning rate of 0.001 it took 5 hours. It was trained for 25 epochs with batch-size of 200 and MNIST dataset.
+    \item To train the upgraded model which just had additional Batch-Normalization layer and dropout layer with 0.5. It was trained for 100 iterations with a batch-size of 32 it took around 12 hours and for same MNIST dataset. It has achieved accuracy of 99.8\%.
+    \item But when same model was trained on CIFAR-10 dataset with same number of iterations and batch-size it took around 15 hours and achieved accuracy of 88\% which is less when compared to the previous one.
+\end{itemize}
+
+\noindent In order to visualize everything the coding is done using Jupyter Notebook.
+
+\newpage \noindent The following are the observations from the experiments.
+\begin{itemize}
+    \item Parameters like number of epochs does have an effect on learning patterns of the weights. This is evident when we compare figure 4.2 and figure 4.11.
+    \item Addition of Batch-Normalization reduces the dead-filters and redundant filters inside the network.
+    \item When we use mini batch-size the weights are trained more effectively and reduces dead-filters. 
+    \item The filter-size did not show any effect on the feature maps. Because when the filter size was increased to 5 it showed the similar activations. 
+    \item It is clearly evident that the deeper we go in to the network patterns recognized by the weights look more abstract and they contain less information about the input image. It was also stated in previous works.
+\end{itemize}
+
+
+
+\noindent The filters of upgraded model trained on MNIST dataset represent more obvious patterns from the input image. But for a dataset like CIFAR-10 the filters are not so clear though there are no dead-filters spotted the visualizations are very noisy. Adding more regularizations like L2 to the network might help them overcome these noisy patterns and get more smooth filters. This concludes one more point which is each dataset needs different type of regularization parameters. And one last thing is evaluating the model on higher resolution images might give out filter visualizations which are more clear. Then the feature maps would be more apparent. 
+
